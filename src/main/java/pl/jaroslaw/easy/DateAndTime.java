@@ -2,6 +2,7 @@ package pl.jaroslaw.easy;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.Calendar;
 
 /*
 The Calendar class is an abstract class that provides methods for converting between a specific instant in time and a set of calendar fields such
@@ -78,10 +79,14 @@ class Result {
      */
 
     public static String findDay(int month, int day, int year) {
-        String convertDay = day < 10 ? ("0" + day): String.valueOf(day);
-        String convertMonth = month < 10 ? ("0" + month) : String.valueOf(month);
-        LocalDate parseData = LocalDate.parse(year+ "-" + convertMonth + "-" + convertDay);
-        return parseData.getDayOfWeek().name();
+//        String convertDay = day < 10 ? ("0" + day): String.valueOf(day);
+//        String convertMonth = month < 10 ? ("0" + month) : String.valueOf(month);
+//        LocalDate parseData = LocalDate.parse(year+ "-" + convertMonth + "-" + convertDay);
+//        return parseData.getDayOfWeek().name();
+        Calendar c = Calendar.getInstance();
+        c.set(year, month, day);
+        return LocalDate.of(year, month, day).getDayOfWeek().toString();
+
     }
 
 }
