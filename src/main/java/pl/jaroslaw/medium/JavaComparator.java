@@ -1,4 +1,4 @@
-package pl.jaroslaw.easy.medium;
+package pl.jaroslaw.medium;
 
 import java.util.Arrays;
 import java.util.Comparator;
